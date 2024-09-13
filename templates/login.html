@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+{% set messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+ <div class="alert alert-danger" role="alert">
+    {% for categoria, msg in messages %}
+        <div class="alert alert-{{categoria}} role="alert"">
+            {{msg}}
+        </div>
+    {% endfor %}
+ </div>
+ {% endif %}
+
+<form action="/autenticar" method="post">
+    <div class="mb-3">
+      <label for="user" class="form-label">User</label>
+      <input type="text" class="form-control" id="user" name="user">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<form action="/pedidos/create" method="post">
+    <div class="mb-3">
+      <label for="user_id" class="form-label">User Id</label>
+      <input type="text" class="form-control" id="user_id" name="user_id">
+    </div>
+    <div class="mb-3">
+      <label for="pizza_id" class="form-label">Pizza Id</label>
+      <input type="text" class="form-control" id="pizza_id" name="pizza_id">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}
